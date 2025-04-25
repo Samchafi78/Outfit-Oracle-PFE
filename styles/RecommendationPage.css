@@ -1,0 +1,175 @@
+.recommendation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #334e68;
+}
+
+.file-input, .input-field {
+  width: 300px;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.file-input:hover, .input-field:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.image-preview {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.image-preview h2 {
+  color: #334e68;
+  margin-bottom: 15px;
+}
+
+.confirm-button {
+  padding: 12px 30px;
+  background-color: #3f8efc;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #2966d3;
+}
+
+.confirmed-data {
+  margin-top: 20px;
+}
+
+.confirmed-image {
+  width: 224px;
+  height: 224px;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+
+.recommendations-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.recommended-image {
+  width: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.recommended-image:hover {
+  transform: scale(1.05);
+}
+
+.best-articles-section, .recommendations-section {
+  margin-top: 30px;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.best-article-block h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.recommended-image {
+  max-width: 150px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reset-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #c0392b;
+}
+
+.loading-indicator {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.spinner {
+  margin: 10px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation légère */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommendation-page {
+  animation: fadeIn 0.8s ease-in-out;
+}

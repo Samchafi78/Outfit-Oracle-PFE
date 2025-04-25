@@ -1,0 +1,57 @@
+.homepage {
+    text-align: center;
+    background-color: #f9f9f9;
+    min-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+
+  
+  .landscape-item {
+    width: 100%;  /* Toute la largeur de l'écran */
+    height: 100%; /* Toute la hauteur de l'écran */
+    background-image: url('/public/landscape.jpg'); /* Chemin de l'image */
+    background-size: cover; /* Ajuste l'image pour qu'elle tienne dans l'écran sans être coupée */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.try-now-button {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste précisément le centrage */
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.try-now-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Animation légère */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .homepage {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
