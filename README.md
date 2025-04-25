@@ -19,7 +19,7 @@ Computer Vision avec Deep Learning (Reconnaissance d’image)
 Collaborative Filtering avec Machine Learning (Recommandation)  
 
 ⚙️ Installation
-1. Clone du projet  
+Clone du projet  
 git clone https://github.com/ton-utilisateur/outfit-oracle.git
 cd outfit-oracle
 
@@ -33,3 +33,6 @@ Obtiens 5 recommandations personnalisées incluant haut, bas, et veste.
 Deep Learning : Pour extraire les caractéristiques visuelles de l'image (features).  
 Machine Learning : Pour recommander des articles similaires (User-to-User Collaborative Filtering).  
 
+Arborescence fichiers:
+Les dossiers components et style contiennent les fichiers nécessaires pour le frontend  
+Les autres fichiers sont nécessaires pour le bon fonctionnement du back-end (architecture IA VGG16, connexion à la base de données...)  
