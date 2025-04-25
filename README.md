@@ -23,16 +23,16 @@ Clone du projet
 git clone https://github.com/ton-utilisateur/outfit-oracle.git
 cd outfit-oracle
 
-🖼️ Exemple d'utilisation
+🖼️ Exemple d'utilisation  
 Uploade une image d’un vêtement que tu aimes.  
 Entre ton âge et ton budget.  
 Clique sur "Confirmer".  
 Obtiens 5 recommandations personnalisées incluant haut, bas, et veste.  
 
-🧪 Modèles IA
+🧪 Modèles IA  
 Deep Learning : Pour extraire les caractéristiques visuelles de l'image (features).  
 Machine Learning : Pour recommander des articles similaires (User-to-User Collaborative Filtering).  
 
-Arborescence fichiers:
+Arborescence fichiers:  
 Les dossiers components et style contiennent les fichiers nécessaires pour le frontend  
 Les autres fichiers sont nécessaires pour le bon fonctionnement du back-end (architecture IA VGG16, connexion à la base de données...)  
