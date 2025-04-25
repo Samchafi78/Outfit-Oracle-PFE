@@ -14,18 +14,18 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 CORS(app)
 
-# 📌 Configuration de la base de données MySQL
+# Configuration de la base de données MySQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://samir:samir@localhost/pfe_bd'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# 📌 Configuration du dossier d'upload
+# Configuration du dossier d'upload
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Crée le dossier s'il n'existe pas
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 db = SQLAlchemy(app)
 
-# 📌 Modèle de base de données
+# Modèle de base de données
 class UserInput(db.Model):
     __tablename__ = "user_input"  
     id = db.Column(db.Integer, primary_key=True)
@@ -34,7 +34,7 @@ class UserInput(db.Model):
     budget = db.Column(db.Float)
     created_at = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp())
 
-# 📌 Route pour récupérer les statistiques du tableau de bord
+# Route pour récupérer les statistiques du tableau de bord
 @app.route('/api/dashboard', methods=['GET'])
 def get_dashboard_data():
     today = datetime.date.today()
@@ -43,7 +43,7 @@ def get_dashboard_data():
     total_uploads = UserInput.query.count()
     total_users = db.session.query(UserInput.age).distinct().count()
 
-    # 📊 Nombre d'uploads par jour (30 derniers jours)
+    # Nombre d'uploads par jour (30 derniers jours)
     uploads_by_day = (
         db.session.query(
             func.date(UserInput.created_at).label("date"),
@@ -62,7 +62,7 @@ def get_dashboard_data():
         "uploadsByDay": uploads_by_day_data
     })
 
-# 📌 Route pour récupérer les logs des uploads
+# Route pour récupérer les logs des uploads
 @app.route('/api/logs', methods=['GET'])
 def get_logs():
     logs = (
@@ -84,7 +84,7 @@ def get_logs():
 
     return jsonify(logs_data)
 
-# 📌 Route pour stocker les données (avec upload d'image)
+# Route pour stocker les données (avec upload d'image)
 @app.route('/api/store_data', methods=['POST'])
 def store_data():
     print("Requête reçue:", request.files, request.form)
@@ -107,12 +107,12 @@ def store_data():
     
     
 
-    # 📌 Enregistrement dans la base de données
+    # Enregistrement dans la base de données
     new_entry = UserInput(image_path=filename, age=int(age), budget=float(budget))
     db.session.add(new_entry)
     db.session.commit()
     
-    # ✅ Lancer ML_local.py et récupérer les résultats
+    # Lancer ML_local.py et récupérer les résultats
     try:
         subprocess.run(["python", "PFE_model/ML_local.py", filename], check=True)
 

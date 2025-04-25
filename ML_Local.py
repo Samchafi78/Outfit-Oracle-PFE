@@ -13,10 +13,9 @@ import json
 
 
 def run_model(image_path):
-    # Charge l’image, fait la prédiction
     print(f"Traitement de l'image: {image_path}")
+
     # --- Configuration --- #
-    #image_path = "user_images/test.jpg"  # A changer
     checkpoint_path = os.path.join(os.path.dirname(__file__), "best_model.pth")
 
     # Device define

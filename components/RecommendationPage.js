@@ -12,7 +12,7 @@ function RecommendationPage() {
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedImage(file);  // ✅ Stocke le fichier réel
+      setSelectedImage(file);  // Stocke le fichier réel
     }
   };
 
@@ -30,7 +30,7 @@ function RecommendationPage() {
       return;
     }
 
-    // 🧹 Réinitialise les images affichées à chaque clic
+    // Réinitialise les images affichées à chaque clic
     setRecommendedImages([]);
     setBestArticles([]);
 
@@ -39,7 +39,7 @@ function RecommendationPage() {
     formData.append("age", age);
     formData.append("budget", budget);
     
-    console.log("📡 Envoi des données :", formData);
+    console.log("Envoi des données :", formData);
     setLoading(true); // ⏳ Démarre le chargement
 
     try {
@@ -57,7 +57,7 @@ function RecommendationPage() {
   
       const result = await storeResponse.json();
 
-      // 📌 🔼 Best articles
+      // Best articles
       if (result.best_articles) {
         setBestArticles(result.best_articles);
       }
@@ -66,7 +66,7 @@ function RecommendationPage() {
         const basePath = "http://127.0.0.1:5000/static/images/images";
   
         const imageElements = result.recommendations.map(id => {
-          const paddedId = id.padStart(10, '0'); // Remet les 0 à gauche
+          const paddedId = id.padStart(10, '0');
           const folder = paddedId.substring(0, 3);
           const imageUrl = `${basePath}/${folder}/${paddedId}.jpg`;
           return (
@@ -87,7 +87,7 @@ function RecommendationPage() {
       console.error("Erreur :", error);
       alert("Une erreur est survenue.");
     } finally {
-      setLoading(false); // ✅ Fin du chargement
+      setLoading(false); //Fin du chargement
     }
 
   };
@@ -162,7 +162,7 @@ function RecommendationPage() {
 )}
       
       
-      {/* 🔽 Affichage des recommandations IA */}
+      {/*Affichage des recommandations IA */}
       {recommendedImages.length > 0 && (
         <div className="recommendations-section">
           <h2>Articles recommandés :</h2>
