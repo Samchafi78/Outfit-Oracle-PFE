@@ -35,4 +35,6 @@ Machine Learning : Pour recommander des articles similaires (User-to-User Collab
 
 Arborescence fichiers:  
 Les dossiers components et style contiennent les fichiers nécessaires pour le frontend  
-Les autres fichiers sont nécessaires pour le bon fonctionnement du back-end (architecture IA VGG16, connexion à la base de données...)  
+Les autres fichiers sont nécessaires pour le bon fonctionnement du back-end (architecture IA VGG16, connexion à la base de données...)
+VGG16_V2.py => Architecture modèle DeepLearning + Entraînement modèle   
+ML_Local.py => User-user collaborative filtering (UUCF)  
